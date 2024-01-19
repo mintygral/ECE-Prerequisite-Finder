@@ -14,13 +14,12 @@ def main():
     for num, url, title in zip(data["Course Number"], data["URL"], data["Title"]):
         if num == course_number:
             found = True
-            matching_url = url
             break
 
     if found:
         print(f"Course ECE {course_number}: {title} exists in the data.\n")
-        print(f"The corresponding url is {matching_url}.\n")
-        requisites = get_requisites(matching_url)
+        print(f"The corresponding url is {url}.\n")
+        requisites = get_requisites(url)
         if requisites:
           print(f"Requisites: {requisites}")
         else:
